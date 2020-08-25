@@ -10,7 +10,6 @@ import com.flight.booking.FlightSearchApplication.domain.FlightDetail;
 @Repository
 public interface FlightRepositoryImpl extends FlightRepository {
 
-	@Query(value = "select * from flight_detail where sourceCity = ?1 and destination = ?2 and travelDate = ?3", nativeQuery = true)
-	public List<FlightDetail> getFlightDetailsBySrcDesTravelDate(String source, String destination, String travelDate);
-
+	@Query(value = "select * from detail where src = ?1 and des = ?2 and tdate = ?3", nativeQuery = true)
+	public List<FlightDetail> getFlightDetailsBySrcDesTravelDate(String src, String des, String tdate);
 }
